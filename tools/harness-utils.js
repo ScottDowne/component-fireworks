@@ -11,12 +11,10 @@
       var iframeWindow, iframeDocument;
 
       function callbackWrapper () {
-        console.log( "ZOMG" );
         callback(iframe.contentWindow, iframe.contentWindow.document);
       }
 
       iframe.onload = function (e) {
-        console.log( "ONLOAD" );
         // expose very small test framework to the iframe
         iframe.contentWindow.test = function (name, testFn) {
           handler.iframeTests[name] = testFn;
@@ -27,11 +25,9 @@
         iframeDocument = handler.document = iframe.contentWindow.document;
 
         if (iframeWindow.document.iframeTestUtils) {
-          console.log( "DOOR A" );
           iframe.contentWindow.document.addEventListener('TestFrameworkReady', callbackWrapper, false);
         }
         else {
-          console.log( "DOOR B" );
           iframe.contentWindow.document.addEventListener('WebComponentsReady', callbackWrapper, false);
         }
       };

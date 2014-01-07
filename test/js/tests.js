@@ -1,9 +1,7 @@
-console.log( "OK WAT" );
 (function () {
   var fireworkElement;
   var iframeHandler;
   beforeEach(function (done) {
-      console.log( "WAT?" );
     iframeHandler = harnessUtils.createIframe('test/html/test.html', function (win, doc) {
       fireworkElement = iframeHandler.document.querySelector('ceci-fireworks');
       done();
@@ -11,11 +9,6 @@ console.log( "OK WAT" );
   });
 
   describe('Ceci Fireworks', function () {
-    test('Sanity check', function (done) {
-      console.log( fireworkElement );
-      chai.assert(fireworkElement.ceci, 'Ceci descriptor exists.');
-      iframeHandler.runIframeTest('Sanity Check', done);
-    });
 
     test('Broadcasts', function (done) {
       iframeHandler.testBroadcasts(fireworkElement, done, {
@@ -26,11 +19,9 @@ console.log( "OK WAT" );
           }
         },
         execute: {
-          shootRocket: function (channel) {
+          kaboom: function (channel) {
+            console.log( channel );
             fireworkElement.shootRocket();
-          },
-          shootThisManyRockets: function (channel) {
-            fireworkElement.shootThisManyRockets( 12 );
           }
         }
       });
@@ -43,7 +34,7 @@ console.log( "OK WAT" );
             chai.assert(true, 'shootRocket event occured.');
           },
           shootThisManyRockets: function (e, channel) {
-            chai.assert( e.detail.data, 12, 'shootThisManyRockets shot 12 rockets');
+            chai.assert( true, 'shootThisManyRockets event occured.');
           }
         }
       });
