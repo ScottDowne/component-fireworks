@@ -1,0 +1,5 @@
+{
+    "ceci-fireworks": "Феерверк",
+    "ceci-fireworks/atrributes/fireworkSound/label": "Звук феерверка",
+    "ceci-fireworks/atrributes/fireworkSound/description": "Сказать феерверку что нужно транслировать при каждом выстреле."
+}

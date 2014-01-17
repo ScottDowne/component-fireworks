@@ -1,5 +1,5 @@
 {
-	"ceci-fireworks": "ดอกไม้ไฟ",
-	"ceci-fireworks/atrributes/fireworkSound/label": "เสียงดอกไม้ไฟ",
-	"ceci-fireworks/atrributes/fireworkSound/description": "บอกบอร์ดแคสว่าจะให้ทำอะไรทุกครั้งที่ยิง"
+    "ceci-fireworks": "ดอกไม้ไฟ",
+    "ceci-fireworks/atrributes/fireworkSound/label": "เสียงดอกไม้ไฟ",
+    "ceci-fireworks/atrributes/fireworkSound/description": "บอกดอกไม้ไฟว่าจะให้ส่งข้อความอะไรทุกครั้งที่ยิง"
 }
