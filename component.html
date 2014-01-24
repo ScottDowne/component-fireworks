@@ -2,7 +2,9 @@
   fireworkSound="Kaboom!">
   <template>
     <link rel="stylesheet" href="component.css"></link>
-    <canvas id="canvas" class="fireworks-canvas" on-click="{{click}}">Canvas is not supported in your browser.</canvas>
+    <div class="fireworks-wrapper">
+      <canvas id="canvas" class="fireworks-canvas" on-click="{{click}}">Canvas is not supported in your browser.</canvas>
+    </div>
     <shadow></shadow>
     <script type="text/json" id="ceci-definition">
       {
@@ -255,6 +257,7 @@
             t.particles[ i ].update( i );
           }
         })();
+
       },
       launchRocket: function() {
         this.fireworks.push( new this.Firework( this.cw / 2, this.ch,
@@ -282,6 +285,7 @@
         var rect = this.getBoundingClientRect();
         this.$.canvas.width = this.cw = rect.width;
         this.$.canvas.height = this.ch = rect.width;
+        this.super();
       }
     });
   </script>
