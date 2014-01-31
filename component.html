@@ -1,5 +1,5 @@
-<polymer-element name="ceci-fireworks" attributes="fireworkSound" extends="ceci-element"
-  fireworkSound="Kaboom!">
+<polymer-element name="ceci-fireworks" attributes="fireworksound" extends="ceci-element"
+  fireworksound="Kaboom!">
   <template>
     <link rel="stylesheet" href="component.css"></link>
     <div class="fireworks-wrapper">
@@ -30,7 +30,7 @@
           }
         },
         "attributes": {
-          "fireworkSound": {
+          "fireworksound": {
             "label": "Firework Sound",
             "description": "Tell the fireworks what to broadcast every shot.",
             "editable": "text",
@@ -55,7 +55,7 @@
                 };
         })();
 
-        this.setAttribute('fireworkSound', this.getAttribute("fireworkSound") || 'Kapow!');
+        this.setAttribute('fireworksound', this.getAttribute("fireworksound") || 'Kapow!');
 
         // now we will setup our basic variables for the demo
         var canvas = this.$.canvas,
@@ -143,7 +143,7 @@
 
           // if the distance traveled, including velocities, is greater than the initial distance to the target, then the target has been reached
           if( this.distanceTraveled >= this.distanceToTarget ) {
-            t.broadcast('kaboom', t.getAttribute('fireworkSound'));
+            t.broadcast('kaboom', t.getAttribute('fireworksound'));
             createParticles( this.tx, this.ty, this.hue );
             // remove the firework, use the index passed into the update function to determine which to remove
             fireworks.splice( index, 1 );
