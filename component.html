@@ -282,7 +282,7 @@
           this.launchRocket();
         }
       },
-      enteredView: function() {
+      attached: function() {
         var rect = this.getBoundingClientRect();
         this.$.canvas.width = this.cw = rect.width;
         this.$.canvas.height = this.ch = rect.width;
